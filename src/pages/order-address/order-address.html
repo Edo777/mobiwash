@@ -12,7 +12,7 @@
       
     <ion-list class="comments">
             <ion-item class="text-area-comments">
-                    <ion-label floating>{{ "comment" | translate}}</ion-label>
+                    <ion-label color="primary" floating>{{ "comment" | translate}}</ion-label>
                     <ion-textarea [(ngModel)]="comment"></ion-textarea>
             </ion-item>
     </ion-list>
@@ -22,16 +22,16 @@
    
 
     <ion-item no-lines>
-        <ion-label>{{"possible" | translate}}</ion-label>
+        <ion-label color="primary">{{"possible" | translate}}</ion-label>
         <ion-checkbox [(ngModel)]="fast"></ion-checkbox>
     </ion-item>
     <ion-item *ngIf="!fast">
-        <ion-label floating>{{"date" | translate}}</ion-label>
+        <ion-label color="primary" floating>{{"date" | translate}}</ion-label>
         <ion-datetime displayFormat="MMM DD, YYYY HH:mm" pickerFormat="MMM DD, YYYY HH:mm" monthNames="" [min]="getNow()" [monthShortNames]="monthNameLocal" [(ngModel)]="myDate"></ion-datetime>
     </ion-item>
 
     <ion-item>
-        <ion-label floating>{{"prom_code" | translate}}</ion-label>
+        <ion-label color="primary" floating>{{"prom_code" | translate}}</ion-label>
         <ion-input [(ngModel)]="promo_code" type="text"></ion-input>
     </ion-item>
 

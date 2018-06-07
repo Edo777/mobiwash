@@ -26,6 +26,9 @@ orders-register {
     .cars-info {
         padding-left: 22px;
         padding-right: 16px;
+        ion-item{
+            color: white !important;
+        }
         ion-grid {
             padding: 0;
             .car-row {
