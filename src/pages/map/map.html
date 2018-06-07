@@ -1,0 +1,16 @@
+<ion-grid>
+    
+    <ion-row>
+        <ion-col col-12>
+            <ion-item mode="md" no-padding>
+                <ion-label color="primary" floating>{{"address" | translate}}</ion-label>
+                <ion-input (input)="changeInput()" #infowindowContent [(ngModel)]="newAddress.address"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <input id="pac-input" class="controls" type="text" [placeholder]="placeholderText">
+    <div #map id="map"></div>
+
+
+
+</ion-grid>

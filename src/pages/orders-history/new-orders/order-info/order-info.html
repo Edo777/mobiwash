@@ -1,0 +1,90 @@
+<ion-content>
+    <button ion-button icon-only float-right (tap)="close()">
+        <ion-icon name="close"></ion-icon>
+    </button>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <span head-text>{{"cars"| translate}}`</span>
+                <ion-grid>
+                    <ion-row *ngFor="let car of cars; let i = index ">
+                        <ion-col col-1>
+
+                        </ion-col>
+                        <ion-col text-left>
+                            {{i+1}}) {{car | formatter : "make_id"}} {{car | formatter : "model_id"}} {{car.car_number}}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <span head-text>{{"address"|translate}}`</span>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col text-center>
+                            {{info.address}}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col *ngIf="info?.order_price">
+                <span head-text>{{"price_info" | translate}}</span>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col text-center>
+                            {{info.order_price }}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <span head-text>{{"status" | translate}}`</span>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col text-center>
+                                <div *ngIf="(info?.order_status == 'Pending')" class="status">
+                                        <span>{{"pending" | translate}}</span>
+                                    </div>
+                                    <div *ngIf="(info?.order_status == 'review')" class="status">
+                                        <span>{{"review" | translate}}</span>
+                                    </div>
+                                    <div *ngIf="(info?.order_status == 'Beind processed')" class="status">
+                                        <span>{{"beind_processed" | translate}}</span>
+                                    </div>
+                                    <div *ngIf="(info?.order_status == 'Confirmed')" class="status">
+                                        <span>{{"confirmed" | translate}}</span>
+                                    </div>
+                                    <div *ngIf="(info?.order_status == 'Cancelled')" class="status">
+                                        <span>{{"cancelled" | translate}}</span>
+                                    </div>
+                                    <div *ngIf="(info?.order_status == 'The washer has arrived ')" class="status">
+                                        <span>{{"washer_arrived" | translate}}</span>
+                                    </div>
+                                    <div *ngIf="(info?.order_status == 'complated')" class="status">
+                                        <span>{{"complete_order" | translate}}</span>
+                                    </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <span head-text>{{"phone_number" | translate}}`</span>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col text-center>
+                            {{info.phone}}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

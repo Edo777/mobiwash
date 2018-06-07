@@ -1,0 +1,90 @@
+orders-register {
+    .item-ios,
+    .item-md {
+        padding-right: 8px;
+    }
+    .item-md{
+        background: transparent;
+        color: white;
+    }
+    .item.item-md .checkbox-md {
+        margin-right: 10px;
+    }
+    ion-content {
+        .scroll-content {
+            padding-bottom: 0 !important;
+        }
+    }
+    ion-scroll {
+        .scroll-content {
+            height: 40vh;
+        }
+    }
+    #map {
+        width: 100%;
+    }
+    .cars-info {
+        padding-left: 22px;
+        padding-right: 16px;
+        ion-grid {
+            padding: 0;
+            .car-row {
+                background: grey;
+                border-bottom: 1px solid white;
+                color:white
+            }
+        }
+        .active-car-brand {
+            background: grey;
+            padding: 16px 50px 16px 5px;
+        }
+        .service-types {
+            .only-style {
+                width: 100%;
+                height: 30px;
+                background-repeat: no-repeat;
+                background-position: left;
+                background-size: contain;
+            }
+            .car-1 {
+                width: 100%;
+                max-height: 19.9px;
+                background-image: url(../assets/imgs/1.jpg);
+            }
+            .car-11 {
+                width: 100%;
+                max-height: 23.9px;
+                background-image: url(../assets/imgs/11.jpg);
+            }
+            .car-2 {
+                width: 86%;
+                max-height: 24px;
+                background-image: url(../assets/imgs/2.jpg);
+            }
+            .car-22 {
+                width: 86%;
+                background-image: url(../assets/imgs/22.jpg);
+            }
+            .car-3 {
+               
+                background-image: url(../assets/imgs/3.jpg);
+            }
+            .car-33 {
+                
+                background-image: url(../assets/imgs/33.jpg);
+            }
+            .price {
+                font-weight: bold;
+            }
+        }
+    }
+    *[green] {
+        color: #ebc66d;
+    }
+    *[no-padding-left]{
+        padding-left: 0; 
+    }
+    *[margin-top-minus]{
+        margin-top: -5px;
+    }
+}

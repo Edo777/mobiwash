@@ -1,0 +1,29 @@
+<!-- <ion-header *ngIf="false">
+    <button ion-item detail-none no-lines (tap)="changeLng()"> 
+        {{ activeLngText }}
+        <ion-avatar item-left>
+            <img [src]="activeFlag">
+        </ion-avatar>
+    </button>
+</ion-header> -->
+<ion-content no-padding no-margin>
+    <ion-list mode="md" text-center>
+		<div style="color: #ebc66d">( <span style="color:red">*</span> ) {{"required" | translate}}</div>
+        <ion-item mode="md" no-padding>
+            <ion-label color="primary" floating> {{"name" | translate}}<span style="color:red">*</span></ion-label>
+            <ion-input text-center [(ngModel)]="name"  mode="md"></ion-input>
+        </ion-item>
+
+        <ion-item mode="md" no-padding >
+            <div style="color: #ebc66d" ion-icon item-start>+ ( 374 )</div>
+            <ion-label color="primary" floating>{{"phone_number" | translate}}<span style="color:red">*</span></ion-label>
+            <ion-input type="number"  [(ngModel)]="phoneNumber"  mode="md"></ion-input>
+        </ion-item>
+
+        <ion-item mode="md" no-padding>
+            <ion-label color="primary" floating>{{"ref_id" | translate}}</ion-label>
+            <ion-input text-center type="text"  [(ngModel)]="refCode" mode="md"></ion-input>
+        </ion-item>
+        <button margin-top ion-button mode="ios" full [disabled]="!isComplete" (click)="createAccount()">{{"enter" | translate}}</button>
+    </ion-list>
+</ion-content>

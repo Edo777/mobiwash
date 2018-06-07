@@ -1,0 +1,217 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+*[top] {
+    top: 56px;
+    padding-top: 56px;
+}
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+    border-bottom-color:#ebc66d;
+    box-shadow : inset 0 -1px 0 0 #ebc66d;;
+}
+.item-md.activated{
+    background-color: transparent;
+}
+
+.alert-md{
+    .alert-wrapper{
+        .alert-radio-group{
+            background: rgba(0,0,0,0.2);
+            .alert-radio-icon{
+                border-color: rgba(0,0,0,0.7);;
+            }
+            .alert-radio-inner{
+                background: rgba(0,0,0,0.7);;       
+            }
+            .alert-tappable{
+                .alert-radio-label{
+                    color: rgba(0,0,0,0.7);;
+                }
+            }
+        }
+        background-color: #ebc66d;
+        color: white;
+    }
+    .alert-button-group{
+        .button-inner{
+            color: white;
+        }
+        
+    }
+    .alert-message{
+        text-align: center;
+        color: white;
+    }
+}
+.alert-md .alert-button-group, .alert-ios .alert-button-group{
+    //margin-right: 17px;
+    .alert-message{
+        text-align: center;
+    }
+    justify-content: center;
+}
+.list-ios .item-block .item-inner {
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.toast-md .toast-message {
+    background: transparent;
+    color: white;
+    font-size: 1.7rem;
+    min-height: 56px;
+    max-height: 56px;
+}
+
+.toolbar-background-md {
+    //background: linear-gradient(to right, rgba(173, 189, 132, 1) 0%, rgba(206, 215, 184, 1) 38%, rgba(245, 245, 245, 1) 82%, rgba(245, 245, 245, 1) 97%);
+    background: transparent;
+}
+ion-app {
+    ion-input{
+        color: white !important;
+    }
+    background-image: url('../assets/imgs/bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+ion-icon{
+    color: #ebc66d;
+}
+button{
+    background-color: #ebc66d;
+    color: black;
+    .button-inner{
+        font-weight: bold;
+    }
+}
+ion-menu{
+    background: rgba(0,0,0,0.3);
+    button{
+        background: transparent;
+    }
+    ion-header{
+        background: #ebc66d;
+    }
+    .scroll-content{
+        background: transparent;
+        .ion-list{
+            background: rgba(0,0,0,0.3);
+            .item-md{
+                border: 0 !important;
+            }
+        }
+        button{
+            background: rgba(0,0,0,0.5);
+            color: white;
+            .item-inner{
+                border: 0 !important
+            }
+        }
+    }
+    .menu-inner{
+        background: rgba(0,0,0,0.5) !important;
+    }
+}
+ion-item{
+    background: transparent !important;
+}
+
+ion-item-sliding {
+    background-color: transparent !important;
+    border-top: 2px solid #ebc66d;
+    border-bottom: 2px solid #ebc66d;
+    margin-top: 16px;
+    ion-item-options{
+        background: transparent  !important;
+        border: 0 !important;
+        button{
+            min-width: 0px;
+            width: 100px;
+            height: 100%;
+            background-color: transparent !important;
+        }
+    }
+    .item{
+        color: white;
+        background: transparent !important;
+        button{
+            background: transparent !important;
+            border: 1px solid white;
+            color: white !important;
+        }
+        height: 100px;
+        ion-icon{
+            color: white;
+        }
+    }
+    
+}
+// *[bg] {
+//     background-image: url('../assets/imgs/bg.jpg');
+//     background-position: center;
+//     background-size: cover
+// }
+.header-md::after{
+    background: transparent;
+}
+.tabbar{
+    // a{
+    //     border: 1px solid #ebc66d !important;
+    // }
+    
+    background: transparent !important;
+    .tab-button{
+        background: transparent !important
+    }
+}
+.back-button{
+    color: #ebc66d;
+  }
+.modal-wrapper{
+    button{
+        background: transparent;
+        color: #ebc66d !important;
+        ion-icon{
+            color: #ebc66d !important;
+        }
+    }
+    background-image: url('../assets/imgs/bg.jpg');
+    background-position: center;
+    background-size: cover; 
+}
+
+.content-md{
+    background: transparent;
+    .scroll-content, .fixed-content{
+        background: transparent;
+    }
+}
+    
+    
+    //background-color: rgba(0,0,0,0.5);
+
+.alert-md .alert-button-group{
+    padding-left: 8px;
+}
+/*
+.pac-container{
+    position: absolute;
+    z-index:  9999999999999;
+    .pac-item{
+        z-index:  9999999999999;
+    }
+  }
+  */

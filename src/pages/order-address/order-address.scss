@@ -1,0 +1,20 @@
+order-address {
+    ion-header {
+        .button-inner {
+            color: black;
+        }
+    }
+    .scroll-content {
+        padding-bottom: 0 !important;
+    }
+    .comments{
+        margin:0 5px;
+        .text-area-comments{
+            border-top:1px solid black;
+            .alert-md [aria-checked=true] .alert-radio-inner{
+                background: black;
+            }
+        }
+    }
+    
+}

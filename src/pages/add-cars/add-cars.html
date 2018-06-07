@@ -1,0 +1,58 @@
+<ion-content>
+
+    <button ion-button float-right icon-only (click)="close()">
+             <ion-icon name="close" item-end ></ion-icon>
+        </button>
+    <!--Brands-->
+    <ion-grid>
+        <ion-row class="cars-info">
+            <ion-col col-12>
+                <ion-item mode="md">
+                    <ion-label color="primary" floating>{{"make_id" | translate}}</ion-label>
+                    <ion-input (input)="search.getBrands($event)" [value]="brandName" (ionBlur)="closeSearchBrands=false" (ionFocus)="closeSearchBrands=true" [(ngModel)]="brandName"></ion-input>
+                </ion-item>
+                <ion-scroll scrollY="true" *ngIf="closeSearchBrands && brands?.length">
+                    <ion-grid>
+                        <ion-row *ngFor="let brand of brands">
+                            <ion-col class="car-row" col-12 (tap)="completeBrand(brand.models,brand.name)">
+                                {{ brand.name }}
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-scroll>
+            </ion-col>
+        </ion-row>
+        <!--models-->
+        <ion-row class="cars-info">
+            <ion-col col-12>
+                <ion-item mode="md">
+                    <ion-label color="primary" floating>{{"model" | translate}}</ion-label>
+                    <ion-input (input)="search.getModels($event)" [value]="modelName" (ionBlur)="closeSearchModels=false" (ionFocus)="closeSearchModels=true" [(ngModel)]="modelName"></ion-input>
+                </ion-item>
+                <ion-scroll scrollY="true" *ngIf="closeSearchModels && localModels?.length">
+                    <ion-grid>
+                        <ion-row *ngFor="let model of localModels">
+                            <ion-col class="car-row" col-12 (tap)="completeModel(model.name)">
+                                {{ model.name }}
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-scroll>
+            </ion-col>
+        </ion-row>
+        <!--numbers-->
+        <ion-row class="cars-info">
+            <ion-col col-12>
+
+                <ion-item mode="md">
+                    <ion-label color="primary" floating>{{"lic_plate_nums" | translate}}</ion-label>
+                    <ion-input [(ngModel)]="carNumber"></ion-input>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
+<ion-footer>
+    <button  ion-button full (click)="addCar()" [disabled]="isComplete()">{{"add" | translate}}</button>
+</ion-footer>

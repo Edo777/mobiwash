@@ -1,0 +1,33 @@
+<absolute-header [pageName]='pageName'></absolute-header>
+<ion-content top>
+    <ion-item>
+        <ion-label color="primary" floating>{{"name" | translate}}</ion-label>
+        <ion-input [value]="name" [(ngModel)]="name"></ion-input>
+    </ion-item>
+<!--
+    <ion-item>
+        <ion-label color="primary" floating>
+            {{"email" | translate}}
+        </ion-label>
+        <ion-input [disabled]="false" [value]="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+-->
+    <ion-item>
+        <ion-label color="primary" floating>
+            {{"phone_number" | translate}}
+        </ion-label>
+        <ion-input [disabled]="true" [value]="phone"></ion-input>
+    </ion-item>
+
+    <button ion-button float-right (click)="change()">
+        {{"confirm" | translate}}
+    </button>
+
+
+    <!-- <ion-grid>
+        <ion-row margin-left>
+            {{ prom_code ? ('user_id' | translate)  + '  ' +  prom_code : ("user_id_no"| translate)}}
+        </ion-row>
+    </ion-grid> -->
+
+</ion-content>

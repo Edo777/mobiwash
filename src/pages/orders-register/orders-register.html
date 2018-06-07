@@ -1,0 +1,168 @@
+<ion-content>
+    <button (click)="closeRegisterPage()" ion-button float-right only-icon>
+        <ion-icon md="md-close" ios="md-close"></ion-icon>
+    </button>
+    <button margin-left margin-top ion-button  (tap)="presentPrompt()" *ngIf="historyCars?.length">{{"from_my_cars" | translate}}</button>
+
+    <ion-grid>
+        <!-- BRANDS -->
+        <form [formGroup]="todo">
+            <ion-row class="cars-info">
+                <ion-col col-12>
+
+                    <ion-item mode="md" no-padding>
+                        <ion-label color="primary" floating>{{'make_id' | translate}}</ion-label>
+                        <ion-input (ionBlur)="completeBlur(1)" (ionFocus)="completeFocus($event, 1)" formControlName="make_id" [value]="brandName" [(ngModel)]="brandName" (input)="getBrands($event)">
+                        </ion-input>
+
+                    </ion-item>
+                    <ion-scroll scrollY="true" *ngIf="isCompleteBrand">
+                        <ion-grid>
+                            <ion-row *ngFor="let brand of brands" (tap)="checkBrandButton(brand, brand.name)">
+                                <ion-col class="car-row" col-12>
+                                    {{ brand.name }}
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-scroll>
+
+                </ion-col>
+            </ion-row>
+
+            <!-- car model_id -->
+            <ion-row class="cars-info" *ngIf="rows.hide2" #mod>
+                <ion-col col-12>
+
+                    <ion-item mode="md" no-padding>
+                        <ion-label color="primary" floating>{{'model' | translate}}</ion-label>
+                        <ion-input (ionBlur)="completeBlur(2)" formControlName="model_id" (ionFocus)="completeFocus($event, 2)" [value]="modelName" [(ngModel)]="modelName" (input)="getModels($event)"></ion-input>
+                    </ion-item>
+                    <ion-scroll scrollY="true" *ngIf="isCompleteModel">
+                        <ion-grid>
+                            <ion-row *ngFor="let model of localModels" (tap)="checkModelButton(model)">
+                                <ion-col class="car-row" col-12>
+                                    {{ model.name }}
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </ion-scroll>
+
+                </ion-col>
+            </ion-row>
+            <!-- car_number car -->
+            <ion-row class="cars-info" *ngIf="rows.hide3">
+                <ion-col col-12>
+
+                    <ion-item mode="md" no-padding>
+                        <ion-label color="primary" floating>{{"lic_plate_nums" | translate}}</ion-label>
+                        <ion-input maxlength="10" formControlName="car_number" (ionBlur)="completeBlur(3)" (ionFocus)="completeFocus($event)" [value]="carNumber" [(ngModel)]="carNumber"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+        </form>
+        
+        <!-- Type pinking -->
+
+        <ion-row class="cars-info" *ngIf="rows.hide4">
+            <ion-list mode="ios" radio-group [(ngModel)]="arr[0]" (ionChange)="calcPrice()">
+                <ion-list-header no-lines>
+                    {{"service_type" | translate}}
+                </ion-list-header>
+
+                <ion-item mode="ios" text-wrap >
+                    <ion-label>{{"wash_type_1" | translate}}</ion-label>
+                    <ion-radio #radio  mode="ios" (tap)="selectedRadioIndex(0)" value="1"></ion-radio>
+                </ion-item>
+
+                <ion-item mode="ios" text-wrap>
+                    <ion-label>{{"wash_type_2" | translate}}</ion-label>
+                    <ion-radio #radio mode="ios" (tap)="selectedRadioIndex(1)" value="2"></ion-radio>
+                </ion-item>
+
+                <ion-item mode="ios" text-wrap>
+                    <ion-label>{{"wash_type_3" | translate}}</ion-label>
+                    <ion-radio #radio mode="ios" (tap)="selectedRadioIndex(2)" value="3"></ion-radio>
+                </ion-item>
+                <!-- service price -->
+                <ion-grid margin-left class="service-types" >
+                    <ion-row align-items-center>
+                        <ion-col col-3>
+                            <div class="car-1 only-style">
+
+                            </div>
+                        </ion-col>
+                        <ion-col col-3>
+                            <div class="car-11 only-style">
+
+                            </div>
+                        </ion-col>
+                        <ion-col col-4>
+                            <div class="price" text-center green>
+                                {{selectedPrice[0]}} {{"price" | translate}}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row align-items-center>
+                        <ion-col col-3>
+                            <div class="car-2 only-style">
+
+                            </div>
+                        </ion-col>
+                        <ion-col col-3>
+                            <div class="car-22 only-style">
+
+                            </div>
+                        </ion-col>
+                        <ion-col col-4>
+                            <div class="price" text-center green>
+                                {{selectedPrice[1]}} {{"price" | translate}}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row align-items-center>
+                        <ion-col col-3 margin-top-minus>
+                            <div class="car-3 only-style">
+
+                            </div>
+                        </ion-col>
+                        <ion-col col-3>
+                            <div class="car-33 only-style">
+
+                            </div>
+                        </ion-col>
+                        <ion-col col-4>
+                            <div class="price" text-center green>
+                                {{selectedPrice[2]}} {{"price" | translate}}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <!--
+					<ion-row margin-right>
+                        <ion-col col-12 green>
+                            {{"from_discount" | translate}}
+                        </ion-col>
+					</ion-row>
+					-->
+                </ion-grid>
+                <!-- service price -->
+                <ion-item no-lines *ngIf="false">
+                    <ion-label>
+                        {{"Սրահի չոր էքսպրես-քիմմաքրում" | translate}}
+                    </ion-label>
+                    <ion-checkbox (ionChange)="calcPriceOthers()" [(ngModel)]="qim"></ion-checkbox>
+                </ion-item>
+                <!--<ion-item no-lines>
+                    <ion-label>
+                        {{"nano_cleaning" | translate}}
+                    </ion-label>
+                    <ion-checkbox (ionChange)="calcPriceOthers()" [(ngModel)]="nano"></ion-checkbox>
+				</ion-item>
+			-->
+            </ion-list>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <button full large ion-button [disabled]="(!todo.valid) || (!(arr[0]) && !(arr[1]))" (tap)="completeRegisterPage()">{{"add" | translate}}</button>
+</ion-footer>

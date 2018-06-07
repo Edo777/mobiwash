@@ -1,0 +1,13 @@
+orders-history {
+    .tabs-ios .tab-button{
+        margin-left: 2px;
+        margin-right: 2px;
+        color: white;
+        border: 2px solid white; 
+    }
+    .tabs-ios .tab-button[aria-selected=true] {
+       
+        color: #ebc66d;
+        border: 2px solid #ebc66d;
+    }
+}

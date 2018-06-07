@@ -1,0 +1,23 @@
+about-us-page {
+    .scroll-content {
+        padding-bottom: 56px;
+    }
+    *[green-light] {
+        color: #ebc66d;
+    }
+    *[bold] {
+        font-weight: bold;
+    }
+    *[head] {
+        font-size: 1.19em;
+    }
+    *[red]{
+        color:red;
+    }
+    *[border-bottom]{
+        border-bottom:1px solid  #ebc66d;
+    }
+    ion-col{
+        color: white
+    }
+}

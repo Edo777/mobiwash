@@ -1,0 +1,83 @@
+<ion-header>
+    <ion-navbar>
+
+    </ion-navbar>
+    <button ion-button full  (tap)="createNewOrder()">{{"add_car" | translate}}</button>
+</ion-header>
+<ion-content>
+    <ion-list no-margin mode="md">
+        <ion-item-sliding #item *ngFor="let car of cars; let i = index">
+            <ion-item mode="md" class="view" no-lines>
+                <ion-icon item-left color="secondary" md="md-arrow-dropleft" ios="md-arrow-dropleft"></ion-icon>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-1>
+                            <ion-icon color="mycolor" md="ios-car-outline" ios="ios-car-outline"></ion-icon>
+                        </ion-col>
+                        <ion-col col-11>
+                            {{"make_id" | translate}} - {{ car | formatter:"make_id"}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1 text-center>
+
+                        </ion-col>
+                        <ion-col col-11>
+                            {{"model" | translate}} - {{car | formatter:"model_id"}}
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-1>
+
+                        </ion-col>
+                        <ion-col col-11>
+                            {{"lic_plate_nums" | translate}} - {{car.car_number}}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <ion-icon color="danger" item-end md="md-arrow-dropright" ios="md-arrow-dropright"></ion-icon>
+            </ion-item>
+            <ion-item-options side="right">
+                <button mode="ios" class="close-button" color="danger" (click)="deleteConfirm(i, item)" ion-button icon-only>
+                    <ion-grid>
+                        <ion-row>
+                                <ion-col col-12 text-center>
+                                    {{"delete" | translate}}
+                                </ion-col>
+                        </ion-row>
+                        <ion-row>
+                                <ion-col col-12>
+                                    <ion-icon md="md-trash" ios="md-trash"></ion-icon>
+                                </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </button>
+            </ion-item-options>
+            <ion-item-options side="left">
+                <button mode="ios" class="close-button" color="secondary" (click)="edit(i)" ion-button icon-only>
+                    <ion-grid>
+                        <ion-row>
+                                <ion-col col-12 text-center>
+                                    {{"edit" | translate}}
+                                </ion-col>
+                        </ion-row>
+                        <ion-row>
+                                <ion-col col-12>
+                                    <ion-icon md="md-create" ios="md-create"></ion-icon>
+                                </ion-col>
+                        </ion-row>
+                    </ion-grid>
+
+
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+
+
+</ion-content>
+<ion-footer>
+    <button ion-button text-center full (tap)="completeAll()"  [disabled]="cars?.length == 0">{{"confirm_all" | translate}}</button>
+</ion-footer>

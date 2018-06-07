@@ -1,0 +1,68 @@
+<ion-content>
+    <ion-list>
+        <div *ngFor="let item of data2; let i = index">
+        <ion-item-sliding *ngIf="item?.order_status != 'deleted'"  #slideingItem margin-bottom>
+            <ion-item no-lines class="view" mode="md">
+                <ion-icon item-left class="left-arrow"  md="md-arrow-dropleft" ios="md-arrow-dropleft"></ion-icon>
+                <ion-icon item-right class="right-arrow"  md="md-arrow-dropright" ios="md-arrow-dropright"></ion-icon>
+                <div class="number">
+                    <span> № {{item?.id}}</span>
+                </div>
+                <div class="price" *ngIf="price(item?.order_status)">
+                    <span *ngIf="item?.order_price">{{item?.order_price}} {{"price" | translate}}</span>
+                </div>
+                <div *ngIf="(item?.order_status == 'Pending')" class="status">
+                    <span>{{"pending" | translate}}</span>
+                </div>
+                <div *ngIf="(item?.order_status == 'review')" class="status">
+                    <span>{{"review" | translate}}</span>
+                </div>
+                <div *ngIf="(item?.order_status == 'Beind processed')" class="status">
+                    <span>{{"beind_processed" | translate}}</span>
+                </div>
+                <div *ngIf="(item?.order_status == 'Confirmed')" class="status">
+                    <span>{{"confirmed" | translate}}</span>
+                </div>
+                <div *ngIf="(item?.order_status == 'Cancelled')" class="status">
+                    <span>{{"cancelled" | translate}}</span>
+                </div>
+                <div *ngIf="(item?.order_status == 'The washer has arrived ')" class="status">
+                    <span>{{"washer_arrived" | translate}}</span>
+                </div>
+                <div *ngIf="(item?.order_status == 'complated')" class="status">
+                    <span>{{"complete_order" | translate}}</span>
+                </div>
+
+
+
+                <ion-grid  class="buttons">
+                    <ion-row no-margin>
+                        <ion-col col-4><button mode="ios" small normal class="more" ion-button  (tap)="more(item)">{{"more" | translate}}</button></ion-col>
+                        <ion-col col-4 *ngIf="!confirmed(item?.order_status)"></ion-col>
+                        <ion-col col-4 *ngIf="cancelled(item?.order_status)"><button mode="ios" small normal class="cancel" color="danger" ion-button (tap)="alertCancelled(item, 'Cancelled')">{{"cancel" | translate }}</button></ion-col>
+                        <ion-col col-4 *ngIf="confirmed(item?.order_status)"><button mode="ios" small normal class="confirm" color="secondary" (tap)="updateOrder(item, 'Confirmed', i)" ion-button>{{"confirm" | translate}}</button></ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+            <ion-item-options side="left" >
+
+                <button class="close-button"  (click)="copy(item)" ion-button icon-only>
+                        <ion-icon md="md-copy" ios = "md-copy"></ion-icon>
+                </button>
+
+            </ion-item-options>
+            <ion-item-options side="right">
+
+                <button class="close-button" expandable (tap)="updateOrder(item, 'deleted')" ion-button icon-only>
+                        <ion-icon color="danger" name="trash"></ion-icon>
+                </button>
+
+            </ion-item-options>
+            
+        </ion-item-sliding>
+    </div>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" threshold="100px">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" [loadingText]="serv.translateImportant('Խնդրում ենք սպասել․․․', 'Please wait...')"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

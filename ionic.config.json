@@ -1,0 +1,8 @@
+{
+    "name": "myApp",
+    "app_id": "com.annaniks.mobiwash",
+    "type": "ionic-angular",
+    "integrations": {
+        "cordova": {}
+    }
+}

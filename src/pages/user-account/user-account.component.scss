@@ -1,0 +1,22 @@
+user-account {
+    .button-md {
+        height: 3em;
+        width: 100%;
+        text-transform: capitalize;
+    }
+    .scroll-content {
+        padding-bottom: 56px;
+        display: flex;
+        ion-row{
+            margin: auto
+        }
+    }
+    .logo {
+        width: 100%;
+        background-repeat: no-repeat;
+        height: 80vw;
+        background-position: center;
+        //background-image: url("../assets/imgs/logo.png");
+        background-size: contain;
+    }
+}
