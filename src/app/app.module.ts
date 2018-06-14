@@ -31,8 +31,8 @@ import {
     Settings,
     PhoneCall,
     OrderInfo,
-    ServicesAndPrices
-
+    ServicesAndPrices,
+    Photo
   } from '../pages/barrel';
 
 //pipes
@@ -81,7 +81,8 @@ import { Keyboard } from "@ionic-native/keyboard";
     PhoneCall,
     CarFormatter,
     OrderInfo,
-    ServicesAndPrices
+    ServicesAndPrices,
+    Photo
   ],
   imports: [
     BrowserModule,
@@ -89,6 +90,7 @@ import { Keyboard } from "@ionic-native/keyboard";
 
     HttpModule,
     IonicModule.forRoot(MyApp,{
+
       mode: 'md',
       tabsPlacement: 'top',
       platforms: {
@@ -126,7 +128,8 @@ import { Keyboard } from "@ionic-native/keyboard";
     Settings,
     PhoneCall,
     OrderInfo,
-    ServicesAndPrices
+    ServicesAndPrices,
+    Photo
   ],
   providers: [
     Geolocation,

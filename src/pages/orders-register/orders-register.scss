@@ -28,17 +28,21 @@ orders-register {
         padding-right: 16px;
         ion-item{
             color: white !important;
+            border-bottom: 0 !important;
+            .item-inner{
+                border-bottom : 0.55px solid #c8c7cc !important;
+            }
         }
         ion-grid {
             padding: 0;
             .car-row {
-                background: grey;
-                border-bottom: 1px solid white;
-                color:white
+                background: white;
+                border-bottom: 1px solid black;
+                color:black
             }
         }
         .active-car-brand {
-            background: grey;
+            background: white;
             padding: 16px 50px 16px 5px;
         }
         .service-types {
@@ -52,29 +56,29 @@ orders-register {
             .car-1 {
                 width: 100%;
                 max-height: 19.9px;
-                background-image: url(../assets/imgs/1.jpg);
+                background-image: url(../assets/imgs/sedan.png);
             }
             .car-11 {
                 width: 100%;
                 max-height: 23.9px;
-                background-image: url(../assets/imgs/11.jpg);
+                background-image: url(../assets/imgs/hachback.png);
             }
             .car-2 {
                 width: 86%;
                 max-height: 24px;
-                background-image: url(../assets/imgs/2.jpg);
+                background-image: url(../assets/imgs/jeep.png);
             }
             .car-22 {
                 width: 86%;
-                background-image: url(../assets/imgs/22.jpg);
+                background-image: url(../assets/imgs/minivan.png);
             }
             .car-3 {
                
-                background-image: url(../assets/imgs/3.jpg);
+                background-image: url(../assets/imgs/salon.png);
             }
             .car-33 {
                 
-                background-image: url(../assets/imgs/33.jpg);
+                background-image: url(../assets/imgs/tapq.png);
             }
             .price {
                 font-weight: bold;
@@ -82,7 +86,7 @@ orders-register {
         }
     }
     *[green] {
-        color: #ebc66d;
+        color: white; //color;
     }
     *[no-padding-left]{
         padding-left: 0; 

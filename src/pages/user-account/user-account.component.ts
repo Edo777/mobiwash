@@ -17,7 +17,6 @@ export class UserAccount {
   pageName: string = "general";
   activeLng: any;
   logoPath: string;
-  
   constructor(public modalCtrl: ModalController,
               private mobiWash: MobiWash,
               private nav: NavController,

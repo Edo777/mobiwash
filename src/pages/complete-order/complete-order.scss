@@ -1,20 +1,24 @@
 complete-order {
-    .scroll-content {
-        border: 5px solid #adbd84;
+    .content-md .scroll-content, .content-md .fixed-content{
+        display: flex;
     }
-    h1 {
-        padding: 10px;
+    h5{
+        color: white;
+        
     }
-    .logo {
-        width: 100%;
-        background-repeat: no-repeat;
-        height: 80vw;
-        background-position: center;
-        background-image: url("../assets/imgs/logo.png");
-        background-size: contain;
-    }
+    // .logo {
+    //     width: 100%;
+    //     background-repeat: no-repeat;
+    //     height: 80vw;
+    //     background-position: center;
+    //     background-image: url("../assets/imgs/logo.png");
+    //     background-size: contain;
+    // }
     .button-md {
         width: 100%;
-        font-size: 3.5vw;
+        font-size: 3.1vw;
+    }
+    ion-grid{
+        margin: auto
     }
 }

@@ -10,7 +10,7 @@
 
     
       
-    <ion-list class="comments">
+    <ion-list class="comments" >
             <ion-item class="text-area-comments">
                     <ion-label color="primary" floating>{{ "comment" | translate}}</ion-label>
                     <ion-textarea [(ngModel)]="comment"></ion-textarea>
@@ -30,10 +30,10 @@
         <ion-datetime displayFormat="MMM DD, YYYY HH:mm" pickerFormat="MMM DD, YYYY HH:mm" monthNames="" [min]="getNow()" [monthShortNames]="monthNameLocal" [(ngModel)]="myDate"></ion-datetime>
     </ion-item>
 
-    <ion-item>
+    <!-- <ion-item>
         <ion-label color="primary" floating>{{"prom_code" | translate}}</ion-label>
         <ion-input [(ngModel)]="promo_code" type="text"></ion-input>
-    </ion-item>
+    </ion-item> -->
 
 </ion-content>
 <ion-footer>

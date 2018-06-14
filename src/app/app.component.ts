@@ -4,7 +4,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { MenuComponent, HomePage } from "../pages/barrel";
+import { HomePage } from "../pages/barrel";
 import { ApiService } from "../services/api.service";
 
 @Component({

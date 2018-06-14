@@ -1,13 +1,13 @@
 <absolute-header [pageName]='pageName'></absolute-header>
 <ion-content top>
-    <ion-grid>
-           <!-- <ion-row margin-bottom>
+
+    <!-- <ion-row margin-bottom>
                     <ion-col green-light>
                         {{"from_discount" | translate}}
                     </ion-col>
 				</ion-row>
 			-->
-        <ion-row text-center align-items-center *ngFor = "let urls of carUrls">
+    <!-- <ion-row text-center align-items-center *ngFor = "let urls of carUrls">
             <ion-col col-4></ion-col>
             <ion-col border-left  margin-bottom *ngFor = "let url of urls" >
                 <ion-img [ngClass]="{'small' : small(url), 'middle' : middle(url), 'big' : big(url)}" [src]="url"></ion-img>
@@ -26,8 +26,8 @@
             <ion-col border-left no-padding text-center>
                 {{info[3]}} {{"price" | translate}}
             </ion-col>
-        </ion-row>
-       <!-- <ion-row align-items-center border-top-bottom  *ngFor="let price of priceInfo" margin-bottom>
+        </ion-row> -->
+    <!-- <ion-row align-items-center border-top-bottom  *ngFor="let price of priceInfo" margin-bottom>
             <ion-col col-4 border-right>
                 {{price[0] | translate}} + {{'nano_cleaning' | translate}}
             </ion-col>
@@ -42,6 +42,18 @@
             </ion-col>
 		</ion-row>
 	-->
+    <div style="text-align:center;">
+        <div>
+            <img src="assets/imgs/sedan.png" width="80px" style="display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/imgs/hachback.png" width="80px" style="display:inline-block;">
+            <p> Սեդան / Հետչբեք ·········3000 դրամ</p>
+            </div>
+            <img src="assets/imgs/jeep.png" width="80px" style="display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/imgs/minivan.png" width="80px" style="display:inline-block;">
+            <p> Ամենագնաց / Մինիվեն ·········4000 - 5000 դրամ</p>
+            <img src="assets/imgs/salon.png" width="80px" style="display:inline-block;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="assets/imgs/tapq.png" width="80px" style="display:inline-block;">
+            <p>Սրահի մաքրում / Թափքի լվացում</p>
+    </div>
 
-    </ion-grid>
 </ion-content>

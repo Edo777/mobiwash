@@ -125,6 +125,9 @@ export class OrdersRegister implements OnInit {
 
   getModels(ev: any) {
     let val = ev.target.value;
+    setTimeout(() => {
+      this.content.scrollToBottom();
+    }, 100)
     if (val && val.trim() != '' && this.models) {
       this.localModels = this.models.filter((item: any) => {
         return (item.name.toLowerCase().startsWith(val.toLowerCase()));

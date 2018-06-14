@@ -85,7 +85,7 @@
                     <ion-radio #radio mode="ios" (tap)="selectedRadioIndex(2)" value="3"></ion-radio>
                 </ion-item>
                 <!-- service price -->
-                <ion-grid margin-left class="service-types" >
+                <!-- <ion-grid margin-left class="service-types" >
                     <ion-row align-items-center>
                         <ion-col col-3>
                             <div class="car-1 only-style">
@@ -137,21 +137,21 @@
                             </div>
                         </ion-col>
                     </ion-row>
-                    <!--
+                   
 					<ion-row margin-right>
                         <ion-col col-12 green>
                             {{"from_discount" | translate}}
                         </ion-col>
 					</ion-row>
-					-->
-                </ion-grid>
+				
+                </ion-grid> -->
                 <!-- service price -->
-                <ion-item no-lines *ngIf="false">
+                <!-- <ion-item no-lines *ngIf="false">
                     <ion-label>
                         {{"Սրահի չոր էքսպրես-քիմմաքրում" | translate}}
                     </ion-label>
                     <ion-checkbox (ionChange)="calcPriceOthers()" [(ngModel)]="qim"></ion-checkbox>
-                </ion-item>
+                </ion-item> -->
                 <!--<ion-item no-lines>
                     <ion-label>
                         {{"nano_cleaning" | translate}}
@@ -164,5 +164,5 @@
     </ion-grid>
 </ion-content>
 <ion-footer>
-    <button full large ion-button [disabled]="(!todo.valid) || (!(arr[0]) && !(arr[1]))" (tap)="completeRegisterPage()">{{"add" | translate}}</button>
+    <button full ion-button [disabled]="(!todo.valid) || (!(arr[0]) && !(arr[1]))" (tap)="completeRegisterPage()">{{"add" | translate}}</button>
 </ion-footer>

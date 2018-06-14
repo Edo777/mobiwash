@@ -115,5 +115,6 @@
         <variable name="PLAY_SERVICES_VERSION" value="12.0.0" />
     </plugin>
     <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
-    <engine name="android" spec="7.0.0" />
+    <allow-navigation href="http://192.168.0.110:8101" />
+    <engine name="android" spec="~7.0.0" />
 </widget>

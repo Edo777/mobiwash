@@ -12,17 +12,17 @@ new-orders {
             min-height: 60px;
             position: relative;
             .infinite-loading {
-                background: linear-gradient(to right, #adbd84 0%, #ced7b8 38%, whitesmoke 82%, whitesmoke 97%);
+                background: white;
                 padding-bottom: 5px;
                 margin: 0;
                 position: absolute;
                 bottom: 0;
                 .infinite-loading-text {
+                    color: black;
                     font-weight: bold;
                 }
             }
-        }
-        
+        }   
     }
     .view {
         .left-arrow{

@@ -11,8 +11,7 @@ export class OrderInfo{
     private cars = []
     constructor(
         private params:NavParams,
-        private viewCtrl:ViewController,
-        private serv:TranslateService,
+        private viewCtrl:ViewController
     ){}
 
     ngOnInit(){

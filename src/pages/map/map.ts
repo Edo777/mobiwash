@@ -19,7 +19,10 @@ declare var google;
         height: 250px;
         width: 100%;
       }
-
+      *[no-padding-horizontal] {
+        padding-left: 0;
+        padding-right: 0;
+      }
       .controls {
         background-color: #fff;
         border-radius: 2px;

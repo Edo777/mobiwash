@@ -1,14 +1,18 @@
 <absolute-header [pageName]="pageName"></absolute-header>
 <ion-content top>
-    <!-- <div class="logo" [ngStyle]="{'background-image': 'url(' + logoPath + ')'}">
 
-    </div> -->
+
+
+
     <ion-row>
+        <ion-col col-12>
+            <iframe width="100%" style="height: 50vh" src="https://www.youtube.com/embed/UhNCN7Pg5SQ" frameborder="0" allowfullscreen></iframe>
+        </ion-col>
         <ion-col col-8 offset-2 text-center>
-            <button ion-button small (click)="createNewOrder()">{{"general" | translate}}</button>
+            <button ion-button small (click)="createNewOrder()">{{"create_order" | translate}}</button>
         </ion-col>
         <ion-col offset-2 col-8>
-            <button ion-button small (click)="oldOrders()">{{"my_orders" | translate}}</button>
+            <button ion-button small (click)="oldOrders()">{{"current_orders" | translate}}</button>
         </ion-col>
     </ion-row>
 </ion-content>

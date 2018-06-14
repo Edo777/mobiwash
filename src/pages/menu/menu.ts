@@ -9,11 +9,13 @@ import {
   OrdersPage,
   OrdersHistory,
   Settings,
-  ServicesAndPrices
+  ServicesAndPrices,
+  Photo
 } from '../barrel'
-import {MobiWash, CB} from "../../services/barrel.service";
+import {CB} from "../../services/barrel.service";
 import {TranslateService} from "../../translate/translate.service";
 import {CallNumber} from "@ionic-native/call-number";
+
 
 interface Pages {
   pageName: string,
@@ -41,7 +43,6 @@ export class MenuComponent {
 
   constructor(public navCtrl: NavController,
               public params: NavParams,
-              private mobiWash: MobiWash,
               private alertCtrl: AlertController,
               private serv: TranslateService,
 			  private callNumber: CallNumber,
@@ -54,7 +55,8 @@ export class MenuComponent {
 		{pageName: "favorite_cars", component: HistoryPage},
 		{pageName: "favorite_addresses", component: Addresses},
 		{pageName: "my_orders", component: OrdersHistory},
-		{pageName: "personal_inf", component: Settings}
+    {pageName: "personal_inf", component: Settings},
+    {pageName : "photo", component: Photo}
 	  ];
     this.activeLng = this.serv.getActiveLng();
 	  this.cb.setCb(this.openOrders.bind(this), "orders")

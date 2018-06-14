@@ -6,7 +6,7 @@ add-cars {
         }
     }
     .car-row {
-        background: grey;
+        background: #21262c;
         border-bottom: 1px solid black;
     }
     .cars-info {
@@ -14,9 +14,9 @@ add-cars {
         ion-grid {
             padding: 0;
             .car-row {
-                background: grey;
-                border-bottom: 1px solid white;
-                color:white
+                background: white; //color;
+                border-bottom: 1px solid #212121;
+                color:black
             }
         }
         /*.active-car-brand {

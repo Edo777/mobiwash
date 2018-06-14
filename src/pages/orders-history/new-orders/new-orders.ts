@@ -1,12 +1,10 @@
 import {Component} from '@angular/core';
 import {ApiService} from "../../../services/api.service";
 import {
-  ToastController,
   LoadingController,
   AlertController,
   InfiniteScroll,
   Platform,
-  NavController,
   App,
   ModalController
 } from "ionic-angular";
@@ -25,14 +23,11 @@ export class NewOrders {
   data = [];
   data2 = [];
   viewHeight: number;
-  isComnplete: boolean = true;
 
   constructor(private api: ApiService,
-              private toastCtrl: ToastController,
               private serv: TranslateService,
               private loadingCtrl: LoadingController,
               private platform: Platform,
-              private navCtrl: NavController,
               private app: App,
               private modal: ModalController,
               private alertCtrl: AlertController) {

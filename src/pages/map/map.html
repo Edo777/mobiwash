@@ -1,7 +1,7 @@
 <ion-grid>
     
     <ion-row>
-        <ion-col col-12>
+        <ion-col col-12 no-padding-horizontal>
             <ion-item mode="md" no-padding>
                 <ion-label color="primary" floating>{{"address" | translate}}</ion-label>
                 <ion-input (input)="changeInput()" #infowindowContent [(ngModel)]="newAddress.address"></ion-input>

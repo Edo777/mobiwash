@@ -5,7 +5,7 @@ import {CallNumber} from '@ionic-native/call-number';
   selector: 'phone-call',
   template:
       `
-    <button ion-button full (tap)="call()"> {{"connect_admin" | translate}}</button>
+    <button ion-button  (tap)="call()"> {{"connect_admin" | translate}}</button>
   `,
   providers: [CallNumber]
 })

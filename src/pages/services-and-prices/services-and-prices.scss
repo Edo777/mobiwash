@@ -1,4 +1,16 @@
 services-and-prices{
+    .scroll-content{
+        display: flex;
+    }
+    div{
+        margin: auto;
+    }
+    p{
+        color:white;
+    }
+    .sedan{
+        background: url('../assets/imgs/sedan.png')
+    }
     .scroll-content {
         padding-bottom: 56px;
     }

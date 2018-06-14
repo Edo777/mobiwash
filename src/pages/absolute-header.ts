@@ -28,7 +28,7 @@ import { Component, Input } from '@angular/core';
       color: white;
     }
     button{
-      color: #ebc66d !important;
+      color: white !important;
     }
     
     span {
@@ -36,7 +36,7 @@ import { Component, Input } from '@angular/core';
       font-weight: 700;
       width: 60%;
       text-align: center;
-      color: #ebc66d !important;
+      color: white; //color !important;
     } 
 
 

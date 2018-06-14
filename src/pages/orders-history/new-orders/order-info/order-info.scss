@@ -1,7 +1,11 @@
 order-info{
     .content-md{
-        background: rgba(158, 216, 167, 0.9);
+        background-image: url('../../../../assets/imgs/bg.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         font-size: 1.3em;
+        color: white;
     }
     *[head-text]{
         font-weight: 600;
