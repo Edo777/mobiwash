@@ -1,19 +1,20 @@
 <ion-header>
-        <h5 text-center padding-horizontal>{{"order_excepted" | translate}}</h5>
+    <h6 text-center padding-horizontal>{{"order_excepted" | translate}}</h6>
 </ion-header>
 <ion-content>
-    
-    <!-- <div class="logo">
-        
-    </div> -->
-
     <ion-grid>
+        <ion-row>
+            <div class="logo">
+
+            </div>
+
+        </ion-row>
         <ion-row>
             <ion-col col-3>
 
             </ion-col>
             <ion-col col-6>
-                <button ion-button (click)="goToStart()">{{"go_home" | translate}}</button>
+                <button ion-button (click)="goToOrdersHistory()">{{"current_orders" | translate}}</button>
             </ion-col>
         </ion-row>
         <ion-row>
@@ -29,7 +30,7 @@
 
             </ion-col>
             <ion-col col-6>
-                <button ion-button (click)="goToOrdersHistory()">{{"my_orders" | translate}}</button>
+                <button ion-button (click)="goToStart()">{{"go_home" | translate}}</button>
             </ion-col>
         </ion-row>
         <ion-row>

@@ -5,7 +5,10 @@ import {CallNumber} from '@ionic-native/call-number';
   selector: 'phone-call',
   template:
       `
-    <button ion-button  (tap)="call()"> {{"connect_admin" | translate}}</button>
+    <button ion-button  (tap)="call()"> 
+        <span>{{"connect_admin" | translate}}</span>
+        <ion-icon name="call" item-end color="primary" margin-left></ion-icon>
+    </button>
   `,
   providers: [CallNumber]
 })
@@ -15,7 +18,7 @@ export class PhoneCall {
   }
 
   call() {
-    this.callNumber.callNumber("+37455950905", true)
+    this.callNumber.callNumber("+37455950509", true)
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));
   }

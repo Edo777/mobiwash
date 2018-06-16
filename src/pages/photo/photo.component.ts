@@ -10,6 +10,6 @@ export class Photo{
     constructor(){}
     ngOnInit(){
         this.pageName = "photo";
-        this.images = ['assets/imgs/1.jpg', "assets/imgs/2.jpg", "assets/imgs/3.jpg", 'assets/imgs/Background.jpg' ];
+        this.images = ['assets/imgs/one.jpg', 'assets/imgs/two.jpg', 'assets/imgs/three.jpg', 'assets/imgs/Background.jpg'];
     }
 }

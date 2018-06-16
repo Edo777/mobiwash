@@ -29,33 +29,40 @@
 
 .alert-md{
     .alert-wrapper{
-        .alert-radio-group{
-            background: rgba(0,0,0,0.2);
-            .alert-radio-icon{
-                border-color: rgba(0,0,0,0.7);;
-            }
-            .alert-radio-inner{
-                background: rgba(0,0,0,0.7);;       
-            }
-            .alert-tappable{
-                .alert-radio-label{
-                    color: rgba(0,0,0,0.7);;
-                }
-            }
+        .alert-radio-label{
+            color: white;
         }
-        background-color: white; //color;
-        color: black;
+        .alert-radio-group{
+            border-top: 0;
+            border-bottom: 2px solid white;
+            // background: rgba(0,0,0,0.2);
+            // .alert-radio-icon{
+            //     border-color: rgba(0,0,0,0.7);;
+            // }
+            // .alert-radio-inner{
+            //     background: rgba(0,0,0,0.7);;       
+            // }
+            // .alert-tappable{
+            //     .alert-radio-label{
+            //         color: rgba(0,0,0,0.7);;
+            //     }
+            // }
+        }
+        background-color: rgba(0,0,0,0.8); //color;
+        border:2px solid white;
+        color: white !important;
     }
     .alert-button-group{
+        
         .button-inner{
-            color: black;
+            color: white;
         }
         
     }
     .alert-message{
         text-align: center;
         font-weight: bold;
-        color: black;
+        color: white;
     }
 }
 .alert-md .alert-button-group, .alert-ios .alert-button-group{
@@ -86,18 +93,36 @@ ion-app {
     ion-input{
         color: white !important;
     }
-    background-image: url('../assets/imgs/bg.jpg');
-    background-position: center;
+    &::after{
+            content : "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background : rgba(0,0,0,0.7);
+            z-index: -1;
+        
+    }
+    background-color: rgba(0,0,0,0.5);
+    background-image: url('../assets/imgs/one.jpg');
+    background-position: 25% center;
     background-size: cover;
 }
 ion-icon{
     color: white; //color;
 }
-button{
-    background-color: white; //color;
-    color: black;
+.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+    border: 0;
+}
+.button-ios, .button-md{
+    background-color: transparent; //color;
+    border: 2px solid white;
+    color: white;
     .button-inner{
         font-weight: bold;
+        text-transform: uppercase;
     }
 }
 ion-menu{
@@ -105,8 +130,12 @@ ion-menu{
     button{
         background: transparent;
     }
+    .toolbar-title-md{
+        color: white;
+    }
     ion-header{
-        background: white; //color;
+        background: black; //color;
+        border-bottom: 2px solid white;
     }
     .scroll-content{
         background: transparent;
@@ -133,11 +162,12 @@ ion-item{
 }
 .loading-md .loading-wrapper{
     .loading-content{
-        color: black;
+        color: white;
     }
-    background-color: white; //color;
+    background-color: rgba(0,0,0,0.8); //color;
+    border: 2px solid white;
     circle{
-        stroke: black;
+        stroke: white;
     }
 }
 ion-item-sliding {
@@ -171,7 +201,7 @@ ion-item-sliding {
     
 }
 // *[bg] {
-//     background-image: url('../assets/imgs/bg.jpg');
+//     background-image: url('../assets/imgs/one.jpg');
 //     background-position: center;
 //     background-size: cover
 // }
@@ -200,8 +230,20 @@ ion-item-sliding {
             color: white; //color !important;
         }
     }
-    background-image: url('../assets/imgs/bg.jpg');
-    background-position: center;
+    &::after{
+        content : "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background : rgba(0,0,0,0.7);
+        z-index: -1;
+    
+}
+    background-image: url('../assets/imgs/one.jpg');
+    background-position: 25% center;
     background-size: cover; 
 }
 

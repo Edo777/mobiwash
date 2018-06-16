@@ -44,7 +44,6 @@ export class HomePage {
     if (localStorage.getItem("phone_number")) {
       this.api.setId(localStorage.getItem("id"))
       this.api.setPhoneNumber(localStorage.getItem("phone_number"));
-      this.navCtrl.setRoot(MenuComponent);
     }
     //this.keyboardEnterButton()
 

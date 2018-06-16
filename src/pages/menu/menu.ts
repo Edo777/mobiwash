@@ -10,7 +10,6 @@ import {
   OrdersHistory,
   Settings,
   ServicesAndPrices,
-  Photo
 } from '../barrel'
 import {CB} from "../../services/barrel.service";
 import {TranslateService} from "../../translate/translate.service";
@@ -55,8 +54,8 @@ export class MenuComponent {
 		{pageName: "favorite_cars", component: HistoryPage},
 		{pageName: "favorite_addresses", component: Addresses},
 		{pageName: "my_orders", component: OrdersHistory},
-    {pageName: "personal_inf", component: Settings},
-    {pageName : "photo", component: Photo}
+    {pageName: "personal_inf", component: Settings}
+    //{pageName : "photo", component: Photo}
 	  ];
     this.activeLng = this.serv.getActiveLng();
 	  this.cb.setCb(this.openOrders.bind(this), "orders")
@@ -82,7 +81,7 @@ export class MenuComponent {
 
   //call admin
   callAdmin() {
-    this.callNumber.callNumber("+37455950905", true)
+    this.callNumber.callNumber("+37455950509", true)
       .then(() => console.log('Launched dialer!'))
       .catch(() => console.log('Error launching dialer'));
   }

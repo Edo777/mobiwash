@@ -8,7 +8,11 @@ user-account {
         padding-bottom: 56px;
         display: flex;
         ion-row{
-            margin: auto
+            margin: auto;
+            color:white;
+            h6{
+                letter-spacing: 2px;
+            }
         }
     }
     .logo {

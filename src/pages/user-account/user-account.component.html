@@ -1,12 +1,21 @@
 <absolute-header [pageName]="pageName"></absolute-header>
 <ion-content top>
 
-
-
-
     <ion-row>
+        <ion-col text-center col-12>
+            <span>{{"long_text" | translate}}</span>
+        </ion-col>
         <ion-col col-12>
-            <iframe width="100%" style="height: 50vh" src="https://www.youtube.com/embed/UhNCN7Pg5SQ" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" style="height: 50vh; border: 2px solid white;" src="https://www.youtube.com/embed/UhNCN7Pg5SQ" frameborder="0"
+                allowfullscreen></iframe>
+        </ion-col>
+        <ion-col text-center col-12>
+            <h6 no-margin>
+                <span>MOBIWASH</span>
+            </h6>
+        </ion-col>
+        <ion-col text-center>
+            <span>{{"short_text" | translate}}</span>
         </ion-col>
         <ion-col col-8 offset-2 text-center>
             <button ion-button small (click)="createNewOrder()">{{"create_order" | translate}}</button>

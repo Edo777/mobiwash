@@ -1,12 +1,13 @@
-import {Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, NgZone, Input} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, NgZone, Input } from '@angular/core';
 import {
   GoogleMaps,
 } from '@ionic-native/google-maps';
-import {ViewController, NavController} from "ionic-angular";
-import {NativeGeocoder, NativeGeocoderReverseResult} from "@ionic-native/native-geocoder";
-import {Geolocation} from '@ionic-native/geolocation';
-import {Keyboard} from "@ionic-native/keyboard";
-import {TranslateService} from '../../translate/translate.service';
+import { NativeGeocoder, NativeGeocoderReverseResult } from "@ionic-native/native-geocoder";
+import { Geolocation } from '@ionic-native/geolocation';
+import { Keyboard } from "@ionic-native/keyboard";
+import { TranslateService } from '../../translate/translate.service';
+import { LoadingController, ViewController } from 'ionic-angular';
+import { LocationAccuracy } from '@ionic-native/location-accuracy';
 
 declare var google;
 
@@ -42,19 +43,43 @@ declare var google;
         z-index: 999999999
       }
     `],
-  providers: [Geolocation, GoogleMaps]
+  providers: [Geolocation, GoogleMaps, LocationAccuracy]
 })
 export class MapGoogle implements OnInit {
+  isActiveGeo: boolean = false;
+  constructor(
+    public geolocation: Geolocation,
+    private nativeGeocoder: NativeGeocoder,
+    private ngZone: NgZone,
+    private keyBoard: Keyboard,
+    private loadingCtrl: LoadingController,
+    private locationAccuracy: LocationAccuracy,
+    private serv: TranslateService, public viewCtrl: ViewController) {
+    //this.requestAccuracy()
 
-  constructor(private viewCtrl: ViewController,
-              private googleMaps: GoogleMaps,
-              public geolocation: Geolocation,
-              private nativeGeocoder: NativeGeocoder,
-              private nav: NavController,
-              private ngZone: NgZone,
-              private keyBoard: Keyboard,
-              private serv: TranslateService) {
+  }
 
+  requestAccuracy() {
+    this.locationAccuracy.canRequest().then((canRequest: boolean) => {
+      console.log(canRequest)
+      if (canRequest) {
+        this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(() => {
+          console.log('Request successful.')
+          this.isActiveGeo = true;
+          this.getCurrentPosition();
+          this.closeModal();
+        },
+          error => {
+            console.log('Error requesting location permissions', error)
+            this.closeModal();
+          }
+        );
+      }
+    });
+  }
+
+  closeModal() {
+    this.viewCtrl.dismiss();
   }
 
   newAddress: any = {
@@ -100,6 +125,11 @@ export class MapGoogle implements OnInit {
   }
 
   getCurrentPosition() {
+    let loading = this.loadingCtrl.create({
+      content: this.serv.translateImportant("Խնդրում ենք սպասել․․․", 'Please wait...')
+    });
+    loading.present();
+
     this.geolocation.getCurrentPosition().then((position) => {
       this.newAddress.long = position.coords.longitude;
       this.newAddress.lat = position.coords.latitude;
@@ -113,15 +143,19 @@ export class MapGoogle implements OnInit {
             this.newAddress.address = locality + ' ' + subLocality + ' ' + thoroughfare;
             this.setNewMarker(position.coords.latitude, position.coords.longitude);
             this.emitForAddressChange()
+            loading.dismiss()
           })
 
         })
         .catch((error: any) => console.log(error));
       this.emitForAddressChange()
-
     }).catch((err) => {
       console.log(err)
+      loading.dismiss()
     })
+    setTimeout(() => {
+      loading.dismiss();
+    }, 5000);
   }
 
   keyboardEnterButton() {
@@ -264,7 +298,9 @@ export class MapGoogle implements OnInit {
 
     // Setup the click event listeners: simply set the map to Chicago.
     controlUI.addEventListener('click', () => {
+
       thisComponent.getCurrentPosition();
+
     });
 
   }

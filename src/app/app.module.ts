@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, NavController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { FormsModule } from '@angular/forms';
@@ -10,30 +10,30 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 //components
 import { MyApp } from './app.component';
 import {
-    HomePage ,
-    UserAccount,
-    MenuComponent,
-    HistoryPage,
-    HeaderComponent,
-    AboutUs,
-    OrdersRegister,
-    AddCars,
-    Addresses,
-    AddNewAddress,
-    OrdersPage,
-    MapGoogle,
-    OrdersList,
-    CompleteOrder,
-    OrderAddress,
-    OrdersHistory,
-    NewOrders,
-    OldOrders,
-    Settings,
-    PhoneCall,
-    OrderInfo,
-    ServicesAndPrices,
-    Photo
-  } from '../pages/barrel';
+  HomePage,
+  UserAccount,
+  MenuComponent,
+  HistoryPage,
+  HeaderComponent,
+  AboutUs,
+  OrdersRegister,
+  AddCars,
+  Addresses,
+  AddNewAddress,
+  OrdersPage,
+  MapGoogle,
+  OrdersList,
+  CompleteOrder,
+  OrderAddress,
+  OrdersHistory,
+  NewOrders,
+  OldOrders,
+  Settings,
+  PhoneCall,
+  OrderInfo,
+  ServicesAndPrices,
+  Photo
+} from '../pages/barrel';
 
 //pipes
 
@@ -89,20 +89,20 @@ import { Keyboard } from "@ionic-native/keyboard";
     FormsModule,
 
     HttpModule,
-    IonicModule.forRoot(MyApp,{
+    IonicModule.forRoot(MyApp, {
 
       mode: 'md',
       tabsPlacement: 'top',
       platforms: {
-          ios: {
-            backButtonText: '',
-            iconMode: 'ios',
-          },
-          android:{
-            backButtonText: '',
-          }
-       }
-			})
+        ios: {
+          backButtonText: '',
+          iconMode: 'ios',
+        },
+        android: {
+          backButtonText: '',
+        }
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -142,10 +142,10 @@ import { Keyboard } from "@ionic-native/keyboard";
     SplashScreen,
     TranslateService,
     ApiService,
-	Keyboard,
-	CB,
-	InAppBrowser,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Keyboard,
+    CB,
+    InAppBrowser,
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
   ]
 })
-export class AppModule {}
+export class AppModule { }

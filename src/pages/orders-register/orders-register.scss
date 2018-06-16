@@ -36,9 +36,9 @@ orders-register {
         ion-grid {
             padding: 0;
             .car-row {
-                background: white;
-                border-bottom: 1px solid black;
-                color:black
+                background: rgba(0,0,0,0.8);
+                border-bottom: 1px solid white;
+                color:white
             }
         }
         .active-car-brand {

@@ -2,23 +2,26 @@ complete-order {
     .content-md .scroll-content, .content-md .fixed-content{
         display: flex;
     }
-    h5{
+    h6{
         color: white;
         
     }
-    // .logo {
-    //     width: 100%;
-    //     background-repeat: no-repeat;
-    //     height: 80vw;
-    //     background-position: center;
-    //     background-image: url("../assets/imgs/logo.png");
-    //     background-size: contain;
-    // }
+    .logo {
+        width: 100%;
+        background-repeat: no-repeat;
+        height: 80vw;
+        background-position: center;
+        background-image: url("../assets/imgs/three.jpg");
+        background-size: cover;
+        border: 2px solid white;
+        border-radius: 10px;
+    }
     .button-md {
         width: 100%;
         font-size: 3.1vw;
     }
     ion-grid{
-        margin: auto
+        margin: auto;
+        margin-top: 0;
     }
 }
