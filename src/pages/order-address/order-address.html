@@ -27,7 +27,7 @@
     </ion-item>
     <ion-item *ngIf="!fast">
         <ion-label color="primary" floating>{{"date" | translate}}</ion-label>
-        <ion-datetime displayFormat="MMM DD, YYYY HH:mm" pickerFormat="MMM DD, YYYY HH:mm" monthNames="" [min]="getNow()" [monthShortNames]="monthNameLocal" [(ngModel)]="myDate"></ion-datetime>
+        <ion-datetime displayFormat="MMM DD, YYYY HH:mm" pickerFormat="MMM DD, YYYY HH:mm" monthNames="" [min]="getNow()"  [monthShortNames]="monthNameLocal" [(ngModel)]="myDate"></ion-datetime>
     </ion-item>
 
     <!-- <ion-item>

@@ -1,9 +1,9 @@
-import {Component} from "@angular/core";
-import {NavController, LoadingController, NavParams, AlertController, ToastController} from "ionic-angular";
-import {CompleteOrder} from "../barrel";
-import {MobiWash} from "../../services/barrel.service";
-import {TranslateService} from "../../translate/translate.service";
-import {ApiService} from "../../services/api.service";
+import { Component } from "@angular/core";
+import { NavController, LoadingController, NavParams, AlertController, ToastController } from "ionic-angular";
+import { CompleteOrder } from "../barrel";
+import { MobiWash } from "../../services/barrel.service";
+import { TranslateService } from "../../translate/translate.service";
+import { ApiService } from "../../services/api.service";
 
 
 @Component({
@@ -57,13 +57,13 @@ export class OrderAddress {
   monthNameLocal: any;
 
   constructor(private nav: NavController,
-              public loadingCtrl: LoadingController,
-              private navParams: NavParams,
-              private mobiWash: MobiWash,
-              private alertCtrl: AlertController,
-              private serv: TranslateService,
-              private api: ApiService,
-              private toastCtrl: ToastController) {
+    public loadingCtrl: LoadingController,
+    private navParams: NavParams,
+    private mobiWash: MobiWash,
+    private alertCtrl: AlertController,
+    private serv: TranslateService,
+    private api: ApiService,
+    private toastCtrl: ToastController) {
   }
 
   ngOnInit() {
@@ -72,7 +72,7 @@ export class OrderAddress {
     this.cars = this.navParams.get("cars");
     this.historyAddresses = this.mobiWash.getAddresses();
 
-  }
+  };
 
   presentLoadingDefault() {
     let message = this.serv.translateImportant('Խնդրում ենք սպասել...', "Please wait...")
@@ -85,29 +85,34 @@ export class OrderAddress {
     setTimeout(() => {
       loading.dismiss();
     }, 3000);
-  }
+  };
 
   setNewAddress(event) {
     this.address = event;
-  }
-getNow(){
-	let d =new Date();
-	d.setHours(d.getHours()+4); 
-	return d.toISOString();
-}
+  };
+
+  getNow(limitYear?) {
+    let d = new Date();
+    d.setHours(d.getHours() + 4);
+    if(limitYear){
+      d.setFullYear(d.getFullYear() + 1);
+    }
+    return d.toISOString();
+  };
+
   completeOrder() {
 
     this.simple["customer_id"] = this.api.getId()
     this.simple["customer_phone"] = this.api.getPhoneNumber()
-	this.simple["promo_code"] = this.promo_code;
-	let d = new Date(this.myDate);
-	d.setHours(d.getHours()-4); 
+    this.simple["promo_code"] = this.promo_code;
+    let d = new Date(this.myDate);
+    d.setHours(d.getHours() - 4);
     this.simple["date"] = d.toLocaleString('en-GB');
     this.simple["address"] = this.address;
     this.simple["cars"] = this.cars;
     this.simple["asap"] = Number(this.fast);
-	this.simple.comments = this.comment;
-	console.log(this.simple)
+    this.simple.comments = this.comment;
+    console.log(this.simple)
     let loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: this.serv.translateImportant("Խնդրում ենք սպասել․․․", 'Please wait...')
@@ -140,7 +145,7 @@ getNow(){
     )
 
 
-  }
+  };
 
   private addCarsFromLocalstorage(arr) {
     let carsFromLocal = []
@@ -149,7 +154,7 @@ getNow(){
       carsFromLocal.push(arr[i])
     }
     return carsFromLocal;
-  }
+  };
 
   showToast(err) {
     let toast = this.toastCtrl.create({
@@ -159,7 +164,7 @@ getNow(){
     });
 
     toast.present(toast);
-  }
+  };
 
   //////////////////////
   historyAddresses: any;
@@ -184,5 +189,5 @@ getNow(){
       }
     })
     alert.present();
-  }
+  };
 }

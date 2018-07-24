@@ -41,12 +41,7 @@ export class HomePage {
     this.localActiveLng = this.activeLng.lng;
     this.activeLngText = this.activeLng.text;
     this.activeFlag = this.activeLng.flag;
-    if (localStorage.getItem("phone_number")) {
-      this.api.setId(localStorage.getItem("id"))
-      this.api.setPhoneNumber(localStorage.getItem("phone_number"));
-    }
     //this.keyboardEnterButton()
-
   }
 
   /*keyboardEnterButton() {

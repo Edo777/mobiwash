@@ -13,6 +13,7 @@ order-address {
             padding-left: 10px;
         } 
     }
+    
     .datetime-text{
         color: white;
         padding-left:10px;
@@ -38,4 +39,20 @@ order-address {
         }
     }
     
+}
+.picker-wrapper{
+    background: rgba(0,0,0,0.5) !important;
+}
+.picker-md .picker-col, .picker-toolbar{
+    
+    .picker-opt{
+        color: white;
+    }
+    .picker-opt-selected{
+        color: red
+    }
+    background: rgba(0,0,0,0.7) !important;
+    .button-ios, .button-md{
+        border: 0
+    }
 }

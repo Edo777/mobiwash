@@ -37,13 +37,14 @@
     "call-number": "^1.0.1",
     "cordova-android": "7.0.0",
     "cordova-android-play-services-gradle-release": "^1.4.2",
-    "cordova-plugin-add-swift-support": "^1.7.0",
+    "cordova-ios": "4.5.4",
+    "cordova-plugin-add-swift-support": "^1.7.1",
     "cordova-plugin-camera": "^3.0.0",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^1.1.7",
     "cordova-plugin-geolocation": "^3.0.0",
     "cordova-plugin-googlemaps": "^2.3.6",
-    "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git",
+    "cordova-plugin-googlemaps-sdk": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps-sdk.git#2.7.0",
     "cordova-plugin-hotspot": "^1.2.10",
     "cordova-plugin-inappbrowser": "^2.0.2",
     "cordova-plugin-ionic-webview": "^1.2.1",
@@ -103,7 +104,8 @@
       "cordova.plugins.diagnostic": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
