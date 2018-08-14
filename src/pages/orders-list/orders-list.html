@@ -4,7 +4,7 @@
     </ion-navbar>
     <button ion-button full  (tap)="createNewOrder()">{{"add_car" | translate}}</button>
 </ion-header>
-<ion-content>
+<ion-content top>
     <ion-list no-margin mode="md">
         <ion-item-sliding #item *ngFor="let car of cars; let i = index">
             <ion-item mode="md" class="view" no-lines>

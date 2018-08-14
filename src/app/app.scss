@@ -263,6 +263,43 @@ ion-item-sliding {
 .alert-md .alert-button-group{
     //padding-left: 8px;
 }
+
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+        ion-header{
+            margin-top: 30px;
+        }
+        ion-menu {
+            margin-top: 0;
+            ion-header { 
+                margin-top: 0;
+            }
+        }
+        orders-register{
+            .from_my_cars{
+                margin-top: 46px !important
+            }
+        }
+        complete-order{
+            ion-grid{
+                margin-top: 30px !important;
+            }
+        }
+        user-account, orders-list, order-address{
+            content .content-md{
+                margin-top: 0;
+            }
+            *[top] {
+                top: 30px;
+            }
+        }
+        *[top] {
+            top: 86px;
+        }
+    }
+
 /*
 .pac-container{
     position: absolute;

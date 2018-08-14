@@ -3,7 +3,7 @@
 
     </ion-navbar>
 </ion-header>
-<ion-content no-scroll>
+<ion-content no-scroll top>
     <button  ion-button full (tap)="presentPrompt()" *ngIf="historyAddresses?.length">{{"from_my_addresses" | translate}}</button>
 
     <map [address]="address" #map id="map" (close)="setNewAddress($event)"></map>

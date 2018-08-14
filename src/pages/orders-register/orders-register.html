@@ -2,7 +2,7 @@
     <button (click)="closeRegisterPage()" ion-button float-right only-icon>
         <ion-icon md="md-close" ios="md-close"></ion-icon>
     </button>
-    <button margin-left margin-top ion-button  (tap)="presentPrompt()" *ngIf="historyCars?.length">{{"from_my_cars" | translate}}</button>
+    <button margin-left margin-top ion-button class="from_my_cars" (tap)="presentPrompt()" *ngIf="historyCars?.length">{{"from_my_cars" | translate}}</button>
 
     <ion-grid>
         <!-- BRANDS -->

@@ -119,7 +119,6 @@ export class OrderAddress {
     });
     loading.present();
 
-
     this.api.sendOrder(this.simple).subscribe(
       (data) => {
         if (data["status"] == "success") {
@@ -143,7 +142,6 @@ export class OrderAddress {
         this.showToast(message);
       }
     )
-
 
   };
 
