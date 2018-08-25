@@ -287,9 +287,17 @@ ion-item-sliding {
                 margin-top: 30px !important;
             }
         }
+        about-us-page, new-orders, old-orders, services-and-prices, user-account{
+            .scroll-content{
+                padding-bottom: 86px !important;
+            }
+        }
         user-account, orders-list, order-address{
             content .content-md{
                 margin-top: 0;
+            }
+            *[topIphone]{
+                top: 30px;
             }
             *[top] {
                 top: 30px;
@@ -297,6 +305,9 @@ ion-item-sliding {
         }
         *[top] {
             top: 86px;
+        }
+        *[close-button-margin]{
+            margin-top: 35px;
         }
     }
 

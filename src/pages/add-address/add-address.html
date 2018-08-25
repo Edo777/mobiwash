@@ -1,5 +1,5 @@
 <ion-content>
-    <button (click)="close()" ion-button float-right only-icon>
+    <button (click)="close()" ion-button float-right only-icon close-button-margin>
             <ion-icon md="md-close" ios="md-close"></ion-icon>
     </button>
     <map id="map" #map [address]="addressForEdit" (close)="setNewAddress($event)" [isNew]="!isEdit"></map>
