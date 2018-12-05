@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {MobiWash, CarsService} from "../../services/barrel.service";
-import {SearchCars} from "../interfaces/interfaces";
-import {ViewController, NavParams, Keyboard} from "ionic-angular";
+import { Component } from '@angular/core';
+import { MobiWash, CarsService } from "../../services/barrel.service";
+import { SearchCars } from "../interfaces/interfaces";
+import { ViewController, NavParams, Keyboard } from "ionic-angular";
 
 @Component({
   selector: 'add-cars',
@@ -21,15 +21,15 @@ export class AddCars {
   brands: any[];
   cars: any[] = [];
   dataJson: any[];
-  addNewCar: any = {make_id: '', model_id: '', car_number: ''}
+  addNewCar: any = { make_id: '', model_id: '', car_number: '' }
   isEdit: boolean;
   isAddNewCar: boolean = false;
 
   constructor(private viewCtrl: ViewController,
-              private mobiWash: MobiWash,
-              private ordersCtrl: CarsService,
-              private params: NavParams,
-              private keyBoard: Keyboard) {
+    private mobiWash: MobiWash,
+    private ordersCtrl: CarsService,
+    private params: NavParams,
+    private keyBoard: Keyboard) {
   }
 
   ngOnInit() {

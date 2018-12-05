@@ -32,24 +32,24 @@ export class ApiService {
         let body = urlSearchParams.toString()
         var headers = new Headers();
         headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        return this.http.post("http://mobiwash.ru/login/registration", body, { headers: headers }).map(res => res.json())
+        return this.http.post("http://api.mobiwash.ru/login/registration", body, { headers: headers }).map(res => res.json())
     }
     getAllcars(): Observable<any> {
-        return this.http.get("http://mobiwash.ru/webservice/get_cardetails").map(res => res.json())
+        return this.http.get("http://api.mobiwash.ru/webservice/get_cardetails").map(res => res.json())
     }
     sendOrder(order) {
-        return this.http.post("http://mobiwash.ru/webservice/add_orders", order).map(res => res.json())
+        return this.http.post("http://api.mobiwash.ru/webservice/add_orders", order).map(res => res.json())
     }
     updateOrder(order, status) {
-        return this.http.post("http://mobiwash.ru/webservice/update_order_status", { "order_id": order.id, "order_status": status }).map(res => res.json());
+        return this.http.post("http://api.mobiwash.ru/webservice/update_order_status", { "order_id": order.id, "order_status": status }).map(res => res.json());
     }
     getOrders(status) {
-        return this.http.post("http://mobiwash.ru/webservice/get_orders", { customer_id: this.customer_id, order_status: status }).map(res => res.json())
+        return this.http.post("http://api.mobiwash.ru/webservice/get_orders", { customer_id: this.customer_id, order_status: status }).map(res => res.json())
     }
     getCustomerDetails(id?) {
-        return this.http.post("http://www.mobiwash.ru/webservice/get_customer_details", { customer_id: this.customer_id }).map(res => res.json())
+        return this.http.post("http://www.api.mobiwash.ru/webservice/get_customer_details", { customer_id: this.customer_id }).map(res => res.json())
     }
     updateCustomerName(n, mail) {
-        return this.http.post("http://mobiwash.ru/webservice/edit_user_details", { customer_id: this.customer_id, "name": `${n}`, email: mail }).map(res => res.json())
+        return this.http.post("http://api.mobiwash.ru/webservice/edit_user_details", { customer_id: this.customer_id, "name": `${n}`, email: mail }).map(res => res.json())
     }
 }
